@@ -21,7 +21,7 @@ body{
     height: 30vh;
     width: 40%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
