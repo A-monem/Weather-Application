@@ -19,8 +19,9 @@ window.addEventListener("load", () => {
                 }) 
                 .then(data => {
                     console.log(data);
-                    const {temperature, summary, icon} = data.currently;
+                    let {temperature, summary, icon} = data.currently;
                     // set DOM elements from the api
+                    temperature = parseFloat((temperature-32)*(5/9)).toFixed(1);
                     tempratueDegree.textContent = temperature;
                     tempratueDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone; 
@@ -28,7 +29,7 @@ window.addEventListener("load", () => {
                 });
         });
     };
-
+    // function to add a skycon
     function setIcon(icon, iconID){
         var skycons = new Skycons({"color": "white"});
         skycons.add(iconID, icon);
